@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$circle-blue: #005ffe;
+$circle-skin: #ffe5e3;
+$circle-yellow: #ffcc57;
+$sm: 768px;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
 
 * {
     margin: 0;
@@ -27,18 +36,17 @@ body::-webkit-scrollbar {
 .cursor {
     position: fixed;
     //background-color: ;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
-    margin: -10px 0 0 -10px;
+    margin: -1rem 0 0 -1rem;
     will-change: transform;
     user-select: none;
     pointer-events: none;
     z-index: 100000;
     mix-blend-mode: darken;
-    border: 2px solid rgb(17, 17, 17);
+    border: 0.175rem solid rgb(17, 17, 17);
 }
-
 
 .landing-page {
     width: 100vw;
@@ -49,7 +57,7 @@ body::-webkit-scrollbar {
         height: 100%;
         width: 100%;
         overflow: hidden;
-        background-color: #2128bd;
+        //background-color: #2128bd;
     }
 
     .shape {
@@ -57,7 +65,7 @@ body::-webkit-scrollbar {
         position: absolute;
         border-radius: 50%;
 
-        $shapes: (#005ffe: 650px, #ffe5e3: 440px, #ffcc57: 270px);
+        $shapes: ($circle-blue: 650px, $circle-skin: 440px, $circle-yellow: 270px);
          @each $color, $size in $shapes {
             &.shape-#{index($shapes, ($color $size))} {
                 background-color: $color;
@@ -82,10 +90,8 @@ body::-webkit-scrollbar {
         background-color: white;
         mix-blend-mode: screen;
 
-        h1 {
-            color: black;
-            margin: 0;
-            font-size: 30rem;
+        img {
+            width: 90rem;
         }
     }
 }
@@ -115,7 +121,7 @@ body::-webkit-scrollbar {
         .gallery_row {
             display: flex;
             flex-direction: column;
-            width: calc(100%/4);
+            width: 25%;
             
             /*padding: .25rem;
             gap: .5rem;*/
@@ -131,8 +137,3 @@ body::-webkit-scrollbar {
         }
     } 
 }
-
-
-
-
-

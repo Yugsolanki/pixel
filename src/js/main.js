@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-const landing = document.querySelector(".landing-page");
+//cursor
 
 document.body.addEventListener("mousemove", event => {
     const mouseX = event.clientX;
