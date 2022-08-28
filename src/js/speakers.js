@@ -12,6 +12,15 @@ document.body.addEventListener("mousemove", event => {
 });
 
 
+const hamburger = document.querySelector('.hamburger');
+const header = document.querySelector('header');
+
+hamburger.addEventListener('click', function () {
+  this.classList.toggle('active');
+  header.classList.toggle('open');
+})
+
+
 const card = document.querySelectorAll('.card_inner');
 console.log(card);
 for (let i = 0; i < card.length; i++) {

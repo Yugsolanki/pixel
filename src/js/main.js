@@ -3,8 +3,17 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-//cursor
 
+const hamburger = document.querySelector('.hamburger');
+const header = document.querySelector('header');
+
+hamburger.addEventListener('click', function () {
+  this.classList.toggle('active');
+  header.classList.toggle('open');
+})
+
+
+//cursor
 document.body.addEventListener("mousemove", event => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
@@ -23,6 +32,7 @@ let logo = gsap.timeline({
       //pin: true,
       endTrigger: '#pixel-logo',
       end: "top 50%",
+      toggleActions: "play none stop none",
       //markers: true,
       scrub: 1
     }
@@ -38,6 +48,17 @@ let logo = gsap.timeline({
       scrub: 1
     }
   });
+
+  let gallery = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.gallery',
+      start: "top top",
+      pin: true,
+      end: "bottom top",
+      //markers: true,
+      scrub: 20
+    }
+  });
   
   /* let tl2 = gsap.timeline({
     scrollTrigger: {
@@ -50,7 +71,8 @@ let logo = gsap.timeline({
    */
   
   buildings.to('#buildings', {scale: 1.1, y: -20});
-  logo.to('#pixel-logo', {y: -450, scale: 2});
+  logo.to('#pixel-logo', {y: -400, scale: 2.15});
+  gallery.to('.container', {x: -15000})
   
   gsap.from('.content h1', {
     x: -400,
