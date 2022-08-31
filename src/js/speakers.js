@@ -21,10 +21,22 @@ hamburger.addEventListener('click', function () {
 })
 
 
-const card = document.querySelectorAll('.card_inner');
+$(document).ready(function(){
+    $(".more-btn").on('click', function(){
+        $(this).parent().parent().find(".more-text").toggleClass("active");
+    })
+    $(".text").on('mouseover', function (){
+        $(".cursor").css({"border-color": "rgb(0,0,0)", "mix-blend-mode": "darken"});
+    })
+    $(".text").on('mouseout', function (){
+        $(".cursor").css({"border-color": "rgb(255,255,255)", "mix-blend-mode": "normal"});
+    })
+})
+
+/* const more-btns = document.querySelectorAll('.more-btn');
 console.log(card);
 for (let i = 0; i < card.length; i++) {
     card[i].addEventListener('click', () => {
-        card[i].classList.toggle('is-flipped');
+        card[i].classList.toggle('expanded');
     })
-}
+} */

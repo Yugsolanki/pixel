@@ -1,8 +1,7 @@
-import { gsap } from "gsap";
+import { gsap, interpolate } from "gsap";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
-
 
 const hamburger = document.querySelector('.hamburger');
 const header = document.querySelector('header');
@@ -24,71 +23,49 @@ document.body.addEventListener("mousemove", event => {
     })
 });
 
-
-let logo = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.landing-page',
-      start: "top top",
-      //pin: true,
-      endTrigger: '#pixel-logo',
-      end: "top 50%",
-      toggleActions: "play none stop none",
-      //markers: true,
-      scrub: 1
-    }
-  });
-  
-  let buildings = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.landing-page',
-      start: "top top",
-      pin: true,
-      end: "bottom top",
-      //markers: true,
-      scrub: 1
-    }
-  });
-
-  let gallery = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.gallery',
-      start: "top top",
-      pin: true,
-      end: "bottom top",
-      //markers: true,
-      scrub: 20
-    }
-  });
-  
-  /* let tl2 = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.content',
-      start: "top 75%",
-      end: "top 10%",
-      toggleActions: "restart reverse restart reverse",
-    }
-  });
-   */
-  
-  buildings.to('#buildings', {scale: 1.1, y: -20});
-  logo.to('#pixel-logo', {y: -400, scale: 2.15});
-  gallery.to('.container', {x: -15000})
-  
   gsap.from('.content h1', {
     x: -400,
     scrollTrigger: {
       trigger: '.content',
-      start: "top 75%",
-      end: "top 10%",
+      start: "top 80%",
+      end: "top 5%",
+      //pinSpacing: true,
       toggleActions: "restart reverse restart reverse",
+      //markers: true
     }
   });
   gsap.from('.content p', {
     x: -1000,
     scrollTrigger: {
-      trigger: '.content',
-      start: "top 75%",
-      end: "top 10%",
+      trigger: '.content p',
+      start: "top 80%",
+      end: "top 5%",
+      //pinSpacing: true,
       toggleActions: "restart reverse restart reverse",
+      //markers: true
     }
   });
+
+  gsap.to('#pixel-logo', {
+    y: -350,
+    scale: 2,
+    duration: 2
+  })
+
+
+
+/*----------------------------------------------********************************************************************************slider***************************************----------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------********************************************************************************Card***************************************----------------------------------------------------*/
+
+$(document).ready(function(){
+  $(".text").on('mouseover', function (){
+      $(".cursor").css({"border-color": "rgb(0,0,0)", "mix-blend-mode": "darken"});
+  })
+  $(".text").on('mouseout', function (){
+      $(".cursor").css({"border-color": "rgb(255,255,255)", "mix-blend-mode": "normal"});
+  })
+})

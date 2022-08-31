@@ -21,8 +21,8 @@ html {
 }
 
 body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;
     font-family: 'Jura', sans-serif;
@@ -56,18 +56,22 @@ main::-webkit-scrollbar {
 
 
 main {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../../images/bg.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     overflow-x: hidden;
-    overflow-y: scroll;
+    //overflow-y: visible;
 
     section {
+        height: 100%;
         background-image: url(../../images/droplets.svg);
-        margin: 8rem auto;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: contain;
+        display: grid;
+
+        margin: 8rem auto 0 auto;
 
 
         h1 {
@@ -82,147 +86,113 @@ main {
 
         //change grid here
 
-        .speakers-grid {
-            width: 100%;
-            height: 100%;
-            padding: 4rem 0;
-            display: grid;
-            grid-template-columns: repeat(4, 30rem);
-            grid-template-rows: repeat(2, 40rem);
-            column-gap: 5rem;
-            row-gap: 5rem;
-            justify-content: center;
-            align-items: center;
-        }   
+          
+
         
-        @media (max-width: 768px) {
-            .speakers-grid {
-                grid-template-columns: repeat(1, 30rem);
-                grid-template-rows: repeat(5, 40rem);
-            } 
-        }
-
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .speakers-grid {
-                grid-template-columns: repeat(2, 30rem);
-                grid-template-rows: repeat(3, 40rem);
-            } 
-        }
-
-        @media (min-width: 1024px) and (max-width: 1280px) {
-            .speakers-grid {
-                grid-template-columns: repeat(3, 30rem);
-                grid-template-rows: repeat(2, 40rem);
-            } 
-        }
     }
 }
 
 
-.card {
-    width: 30rem;
-    height: 40rem;
-    perspective: 100rem;
 
-    .card_inner {
-        width: 100%;
-        height: 100%;
-        transition: transform 1s;
-        transform-style: preserve-3d;
+
+img {
+    width: 100%;
+}
+.cards {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 40rem);
+    grid-template-rows: repeat(1, auto);
+
+
+    .card {
         position: relative;
+        width: 40rem;
+        padding-bottom: 50px;
+        background-color: #fff;
+        box-shadow: 0 2.1rem 3.5rem rgb(0 0 0/ 0.10);
+        border-radius: 0.6rem;
+        overflow: hidden;
+        transform: scale(0.8);
+        
 
-        .card_face {
+        .text {
+            padding: 1.5rem;
+
+            p {
+                font-size: 1.6rem;
+                line-height: 3rem;
+            }
+
+            h2 {
+                font-size: 3.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .more-btn {
+                width: 10rem;
+                height: 10rem;
+                background-color: #ea7f04;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -6rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                text-align: center;
+                line-height: 5rem;
+                color: #fff;
+                cursor: pointer;
+                z-index: 9;
+                font-size: 2rem;
+                transition: all ease 0.5s;
+            }
+
+            .more-btn:hover {
+                background-color: #f7f7f7;
+                color: #ea7f04;
+            }
+        }
+
+        .more-text {
             position: absolute;
+            bottom: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            overflow: hidden;
-            border-radius: 1.8rem;
-            box-shadow: 0rem 0.3rem 1.8rem 0.3rem rgba(0,0,0,0.2);
-        }
+            background-color: #ff8800;
+            padding: 3rem;
+            overflow-y: auto;
+            transition: all ease 0.7s;
 
-        .card_face-front {
-            background-image: linear-gradient(to bottom right, $yellow, $pink);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            img {
-                height: 100%;
-            }
-        }
-
-        .card_face-back {
-            background-color: $light;
-            transform: rotateY(180deg);
-
-            .card_content {
-                width: 100%;
-                height: 100%;
-
-                .card_header {
-                    position: relative;
-                    padding: 1rem 4rem 2rem;
-
-                    .pp {
-                        display: block;
-                        width: 12rem;
-                        height: 12rem;
-                        margin: 0 auto 0.5rem;
-                        border-radius: 50%;
-                        background-color: #fff;
-                        border: 0.5rem solid #fff;
-                        object-fit: cover;
-                    }
-
-                    h2 {
-                        color: #fff;
-                        font-size: 2rem;
-                        font-weight: 900;
-                        text-transform: uppercase;
-                        text-align: center;
-                    }
-                }
-
-                .card_body {
-                    padding: 1rem;
-
-                    h3 {
-                        color: $dark;
-                        font-size: 1.8rem;
-                        font-weight: 600;
-                        margin-bottom: 0.5rem;
-                    }
-
-                    p {
-                        color: $dark;
-                        font-size: 1.25rem;
-                        line-height: 1.25;
-                    }
-                }
+            h2 {
+                color: #fff;
+                font-size: 3.2rem;
+                margin-bottom: 2rem;
             }
 
-                .card_header:after {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0rem;
-                    right: -1rem;
-                    bottom: -0.5rem;
-                    z-index: -1;
-                    border-radius: 0rem 0rem 50% 0rem;
-                    background-image: linear-gradient(to bottom left, $yellow 10%, $pink 115%);
+            p {
+                color: #fff;
+                font-size: 1.8rem;
+                line-height: 3rem;
+                font-weight: 500;
             }
         }
-    }
-
-    .card_inner.is-flipped {
-        transform: rotateY(180deg);
+        .more-text::-webkit-scrollbar {
+            width: 7px;
+            background-color: #b3b3b3;
+        }
+        .more-text::-webkit-scrollbar-thumb {
+            background-color: #c76d06;
+        }
+        .more-text.active {
+            bottom: 0;
+        }
     }
 }
-
 
 
 
