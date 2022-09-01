@@ -291,6 +291,8 @@ section {
 
 
 
+
+
 /*-------------------------***********************************************************************************************************About Us**********************************************************------------------------------*/
 
 
@@ -481,7 +483,7 @@ section {
                 }
     
                 h2 {
-                    font-size: 3.2rem;
+                    font-size: 3rem;
                     margin-bottom: 0.5rem;
                 }
     
@@ -503,8 +505,8 @@ section {
 
     @media (min-width: 768px) and (max-width: 1024px) {
         .cards {
-            grid-template-columns: repeat(2, 35rem);
-            grid-template-rows: repeat(2, auto);
+            grid-template-columns: repeat(1, 35rem);
+            grid-template-rows: repeat(3, auto);
 
             .card {
                 transform: scale(0.9);
@@ -513,7 +515,7 @@ section {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .core-team {
         height: 100vh;
     }
@@ -525,6 +527,28 @@ section {
 /*-------------------------***********************************************************************************************************Gallery**********************************************************------------------------------*/
 
 
+/*Gallery*/
+
+body{margin: 0}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+.container img {
+  width: 100%;
+  display: block;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  transition: all 100ms ease-out;
+}
+.container img:hover {
+  transform: scale(1.04);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
 
 /*-------------------------***********************************************************************************************************Footer**********************************************************------------------------------*/
 
@@ -534,8 +558,6 @@ footer {
     position: relative;
     width: 100vw;
     height: 5rem;
-    bottom: 0;
-    left: 0;
     background: black;
     display: flex;
     justify-content: space-between;
@@ -600,15 +622,10 @@ footer {
         padding: .25rem;
         gap: 3rem;
 
-        div {
-            height: 100%;
-            display: flex;
-            align-items: center;
-
-            img {
-                height: 3.25rem;
+            a {
+                color: white;
+                font-size: 1.75rem;
             }
-        }
     }
 
     
@@ -617,21 +634,51 @@ footer {
 @media (max-width: 768px) {
 
     footer {
+        overflow: hidden;
+        display: flex;
+        flex-flow: row;
+        gap: 0rem;
         .call {
-            margin-left: 2rem;
+            align-items: center;
+            justify-content: center;
+            margin-left: 3rem;
+            flex-flow: column;
+            gap: .6rem;
+
+            .line {
+                display: none;
+            }
+
             .phone {
-                gap: .1rem;
+                gap: 1rem;
                 h2 {
-                    font-size: 1.25rem;
+                    font-size: 1.3rem;
                 }
                 a {
-                    font-size: 1.25rem;
+                    font-size: 1.3rem;
+                }
+
+                a::after {
+                    height: 0.1rem;
                 }
             }
+        }
+
+        .socials {
+            flex-flow: column;
+            gap: .25rem;
+            justify-content: center;
+
+                a {
+                    font-size: 1.4rem;
+                }
         }
     }
     
 }
+
+
+
 
 svg {
     position: absolute;

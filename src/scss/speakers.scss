@@ -50,149 +50,11 @@ body::-webkit-scrollbar {
     border: 0.175rem solid rgb(255, 255, 255);
 }
 
-main::-webkit-scrollbar { 
-    display: none;
-}
-
-
-main {
-    background-image: url(../../images/bg.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    overflow-x: hidden;
-    //overflow-y: visible;
-
-    section {
-        height: 100%;
-        background-image: url(../../images/droplets.svg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: contain;
-        display: grid;
-
-        margin: 8rem auto 0 auto;
-
-
-        h1 {
-            font-family: 'Cabin Sketch', cursive;
-                font-size: 64px;
-                font-weight: 700;
-                line-height: 75px;
-                letter-spacing: 0em;
-                text-align: center;
-                color: white;
-        }
-
-        //change grid here
-
-          
-
-        
-    }
-}
 
 
 
+/*------------------------*****************************************************************************************************************navbar**********************************************************------------------------------*/
 
-img {
-    width: 100%;
-}
-.cards {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(3, 40rem);
-    grid-template-rows: repeat(1, auto);
-
-
-    .card {
-        position: relative;
-        width: 40rem;
-        padding-bottom: 50px;
-        background-color: #fff;
-        box-shadow: 0 2.1rem 3.5rem rgb(0 0 0/ 0.10);
-        border-radius: 0.6rem;
-        overflow: hidden;
-        transform: scale(0.8);
-        
-
-        .text {
-            padding: 1.5rem;
-
-            p {
-                font-size: 1.6rem;
-                line-height: 3rem;
-            }
-
-            h2 {
-                font-size: 3.2rem;
-                margin-bottom: 2rem;
-            }
-
-            .more-btn {
-                width: 10rem;
-                height: 10rem;
-                background-color: #ea7f04;
-                border-radius: 50%;
-                position: absolute;
-                bottom: -6rem;
-                left: 0;
-                right: 0;
-                margin: 0 auto;
-                text-align: center;
-                line-height: 5rem;
-                color: #fff;
-                cursor: pointer;
-                z-index: 9;
-                font-size: 2rem;
-                transition: all ease 0.5s;
-            }
-
-            .more-btn:hover {
-                background-color: #f7f7f7;
-                color: #ea7f04;
-            }
-        }
-
-        .more-text {
-            position: absolute;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ff8800;
-            padding: 3rem;
-            overflow-y: auto;
-            transition: all ease 0.7s;
-
-            h2 {
-                color: #fff;
-                font-size: 3.2rem;
-                margin-bottom: 2rem;
-            }
-
-            p {
-                color: #fff;
-                font-size: 1.8rem;
-                line-height: 3rem;
-                font-weight: 500;
-            }
-        }
-        .more-text::-webkit-scrollbar {
-            width: 7px;
-            background-color: #b3b3b3;
-        }
-        .more-text::-webkit-scrollbar-thumb {
-            background-color: #c76d06;
-        }
-        .more-text.active {
-            bottom: 0;
-        }
-    }
-}
 
 
 
@@ -357,6 +219,176 @@ header {
 
 
 
+/*------------------------*****************************************************************************************************************Main**********************************************************------------------------------*/
+
+
+main::-webkit-scrollbar { 
+    display: none;
+}
+
+
+main {
+    background-image: url(../../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    //overflow-y: visible;
+
+    section {
+        height: 100%;
+        background-image: url(../../images/droplets.svg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: contain;
+        display: grid;
+
+        margin: 8rem auto 0 auto;
+
+
+        h1 {
+            font-family: 'Cabin Sketch', cursive;
+                font-size: 64px;
+                font-weight: 700;
+                line-height: 75px;
+                letter-spacing: 0em;
+                text-align: center;
+                color: white;
+        }
+
+        //change grid here
+
+    }
+}
+
+
+
+
+img {
+    width: 100%;
+    height: 30em;
+    
+}
+.cards {
+    width: 100%;
+    height: 100%;
+    // perspective: 100rem;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 30rem);
+    grid-template-rows: repeat(2, 40rem);
+
+    column-gap: 5rem;
+    row-gap: 1rem;
+    justify-content: center;
+    align-items: center;    
+
+
+    .card {
+        position: relative;
+        width: 40rem;
+        padding-bottom: 50px;
+        background-color: #fff;
+        box-shadow: 0 2.1rem 3.5rem rgb(0 0 0/ 0.10);
+        border-radius: 0.6rem;
+        overflow: hidden;
+        transform: scale(0.8);
+        
+
+        .text {
+            padding: 1.5rem;
+
+            p {
+                font-size: 1.6rem;
+                line-height: 3rem;
+            }
+
+            h2 {
+                font-size: 3.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .more-btn {
+                width: 10rem;
+                height: 10rem;
+                background-color: #ea7f04;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -6rem;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                text-align: center;
+                line-height: 5rem;
+                color: #fff;
+                cursor: pointer;
+                z-index: 9;
+                font-size: 2rem;
+                transition: all ease 0.5s;
+            }
+
+            .more-btn:hover {
+                background-color: #f7f7f7;
+                color: #ea7f04;
+            }
+        }
+
+        .more-text {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ff8800;
+            padding: 3rem;
+            overflow-y: auto;
+            transition: all ease 0.7s;
+
+            h2 {
+                color: #fff;
+                font-size: 3.2rem;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                color: #fff;
+                font-size: 1.8rem;
+                line-height: 3rem;
+                font-weight: 500;
+            }
+        }
+        .more-text::-webkit-scrollbar {
+            width: 7px;
+            background-color: #b3b3b3;
+        }
+        .more-text::-webkit-scrollbar-thumb {
+            background-color: #c76d06;
+        }
+        .more-text.active {
+            bottom: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(1, 40rem);
+        grid-template-rows: repeat(6, auto);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 40rem);
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+
+/*------------------------*****************************************************************************************************************Footer**********************************************************------------------------------*/
+
 
 footer {
     position: relative;
@@ -426,15 +458,10 @@ footer {
         padding: .25rem;
         gap: 3rem;
 
-        div {
-            height: 100%;
-            display: flex;
-            align-items: center;
-
-            img {
-                height: 3.25rem;
+            a {
+                color: white;
+                font-size: 1.75rem;
             }
-        }
     }
 
     
@@ -443,22 +470,44 @@ footer {
 @media (max-width: 768px) {
 
     footer {
-        gap: 5rem;
+        overflow: hidden;
+        display: flex;
+        flex-flow: row;
+        gap: 0rem;
         .call {
-            margin-left: 2rem;
+            align-items: center;
+            justify-content: center;
+            margin-left: 3rem;
+            flex-flow: column;
+            gap: .6rem;
+
+            .line {
+                display: none;
+            }
+
             .phone {
-                gap: 0rem;
+                gap: 1rem;
                 h2 {
-                    font-size: 1.5rem;
+                    font-size: 1.3rem;
                 }
                 a {
-                    font-size: 1.5rem;
+                    font-size: 1.3rem;
                 }
 
                 a::after {
                     height: 0.1rem;
                 }
             }
+        }
+
+        .socials {
+            flex-flow: column;
+            gap: .25rem;
+            justify-content: center;
+
+                a {
+                    font-size: 1.4rem;
+                }
         }
     }
     
